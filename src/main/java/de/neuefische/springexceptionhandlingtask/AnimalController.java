@@ -1,9 +1,7 @@
 package de.neuefische.springexceptionhandlingtask;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.NoSuchElementException;
 
@@ -22,5 +20,13 @@ public class AnimalController {
     @GetMapping
     String getAllAnimals() {
         throw new NoSuchElementException("No Animals found");
+    }
+
+
+    // LOCAL EXCEPTION HANDLERS
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ErrorMessage handleIllegalArgumentException(Exception ex) {
+        return new ErrorMessage("LOCAL: Ein Fehler ist aufgetreten: " + ex.getMessage());
     }
 }

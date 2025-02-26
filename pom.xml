@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>de.neuefische</groupId>
-    <artifactId>Spring-Exception-Handling-task</artifactId>
+    <artifactId>nf-java-exception-handling</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring-Exception-Handling-task</name>
     <description>Spring-Exception-Handling-task</description>
